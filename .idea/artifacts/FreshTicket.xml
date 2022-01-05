@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="FreshTicket">
+    <output-path>$PROJECT_DIR$/../MC/1.16 Dev Server/plugins</output-path>
+    <root id="archive" name="FreshTicket.jar">
+      <element id="module-output" name="FreshTicket" />
+      <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
+    </root>
+  </artifact>
+</component>

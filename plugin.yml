@@ -1,0 +1,9 @@
+name: FreshTicket
+version: 1.3
+author: CalledCracki, JamesLikesIDE
+api-version: 1.16
+main: at.cracki.freshticket.main.FreshTicket
+
+commands:
+  login:
+  support:
