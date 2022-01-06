@@ -1,6 +1,7 @@
 package at.cracki.freshticket.inventories.support;
 
 import at.cracki.freshticket.discord.DiscordWebhook;
+import at.cracki.freshticket.discord.WebhookManager;
 import at.cracki.freshticket.main.FreshTicket;
 import at.cracki.freshticket.utils.Item;
 import at.cracki.freshticket.utils.Menu;
@@ -43,12 +44,23 @@ public class SupportGUI extends Menu {
         Player player = (Player) event.getWhoClicked();
         if(i.getItemMeta().getDisplayName().equals(FreshTicket.itemnames.get("SupportCase1Name"))) {
             String webhookURL = FreshTicket.stringsettings.get("WebhookURL");
-
-            DiscordWebhook webhook = new DiscordWebhook(webhookURL);
+            DiscordWebhook webhook = new WebhookManager(new DiscordWebhook(webhookURL))
+                    .setEmbed()
+                    .setDescription("A Ticket has been created!")
+                    .setTitle("Ticket System Notification")
+                    .addField("Case", "Case1", true)
+                    .addField("Priority", "Case2", true)
+                    .setImage("https://i.imgur.com/1MxIktF.png")
+                    .setAuthor("FreshTicket", "", "")
+                    .setColor(252, 32, 3)
+                    .setThumbnail("https://i.imgur.com/lSGOy57.png")
+                    .setFooter("Developed by CalledCracki & JamesLikesIDE (@FreshMedia)",
+                                "https://i.imgur.com/lSGOy57.png").execute().toWebhook();
             webhook.setContent("@Cracki **" + player.getName() + "** has created a Ticket!");
             webhook.setAvatarUrl("https://i.imgur.com/4GP7kZ2.png");
             webhook.setUsername("FreshTicket System");
-            webhook.addEmbed(new DiscordWebhook.EmbedObject()
+
+/*            webhook.addEmbed(new DiscordWebhook.EmbedObject()
                     .setTitle("Ticket System Notification")
                     .setDescription("A Ticket has been created!")
                     .addField("Case", "Case1", true)
@@ -63,7 +75,7 @@ public class SupportGUI extends Menu {
             }
             catch (IOException exception) {
                 exception.printStackTrace();
-            }
+            }*/
         }
     }
 

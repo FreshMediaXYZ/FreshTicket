@@ -64,7 +64,6 @@ public class FreshTicket extends JavaPlugin {
         Configuration.cfgConfig();
         Configuration.setCache();
         init();
-        DiscordAdvertisement.startAds();
 
         // Method which announces the Start of the Plugin using a Discord Webhook.
 /*      String webhookURL = stringsettings.get("WebhookURL");
