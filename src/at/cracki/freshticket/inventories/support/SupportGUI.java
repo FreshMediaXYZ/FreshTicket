@@ -7,9 +7,12 @@ import at.cracki.freshticket.utils.Item;
 import at.cracki.freshticket.utils.Menu;
 import at.cracki.freshticket.utils.PlayerMenuUtility;
 import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import java.awt.*;
 import java.io.IOException;
@@ -41,9 +44,14 @@ public class SupportGUI extends Menu {
     @Override
     public void handleMenu(InventoryClickEvent event) {
         ItemStack i = event.getCurrentItem();
+        ItemMeta im = i.getItemMeta();
         Player player = (Player) event.getWhoClicked();
+        if(i.getItemMeta() == null) return;
         if(i.getItemMeta().getDisplayName().equals(FreshTicket.itemnames.get("SupportCase1Name"))) {
-            String webhookURL = FreshTicket.stringsettings.get("WebhookURL");
+            im.addEnchant(Enchantment.DURABILITY, 1, true);
+            im.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+            i.setItemMeta(im);
+/*            String webhookURL = FreshTicket.stringsettings.get("WebhookURL");
             DiscordWebhook webhook = new WebhookManager(new DiscordWebhook(webhookURL))
                     .setEmbed()
                     .setDescription("A Ticket has been created!")
@@ -59,23 +67,7 @@ public class SupportGUI extends Menu {
             webhook.setContent("@Cracki **" + player.getName() + "** has created a Ticket!");
             webhook.setAvatarUrl("https://i.imgur.com/4GP7kZ2.png");
             webhook.setUsername("FreshTicket System");
-
-/*            webhook.addEmbed(new DiscordWebhook.EmbedObject()
-                    .setTitle("Ticket System Notification")
-                    .setDescription("A Ticket has been created!")
-                    .addField("Case", "Case1", true)
-                    .addField("Priority", "Case2", true)
-                    .setImage("https://i.imgur.com/1MxIktF.png")
-                    .setAuthor("FreshTicket", "", "")
-                    .setColor(new Color(252, 32, 3))
-                    .setThumbnail("https://i.imgur.com/lSGOy57.png")
-                    .setFooter("Developed by CalledCracki & JamesLikesIDE (@FreshMedia)", "https://i.imgur.com/lSGOy57.png"));
-            try {
-                webhook.execute();
-            }
-            catch (IOException exception) {
-                exception.printStackTrace();
-            }*/
+            */
         }
     }
 
