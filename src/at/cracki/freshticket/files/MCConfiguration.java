@@ -11,11 +11,11 @@ import java.util.List;
 
 /*
 
-    The Ultimate Class. The Configuration. It saves every important value, which may be changed later.
+    The Ultimate Class. The MCConfiguration. It saves every important value, which may be changed later.
 
  */
 
-public class Configuration {
+public class MCConfiguration {
     private static File file = new File("plugins/FreshTicket", "Config.yml");
 
     private static FileConfiguration cfg = YamlConfiguration.loadConfiguration(file);
@@ -31,8 +31,6 @@ public class Configuration {
     public static void cfgConfig() {
         cfg.options().copyDefaults(true);
         cfg.options().header("==================== FreshTicket by CalledCracki ======================");
-
-        cfg.addDefault("Discord.WebhookURL", "https://discord.com/api/webhooks/927616273850982421/FvHCXP2X54EGeH1HtStB2KD6t86odYg9s_VIMP-oDtYzKDSGprO-_cp0wGJOvmF1XdLF");
 
         cfg.addDefault("Messages.Prefix", "&7[&a&lFreshTicket&7] ");
         cfg.addDefault("Messages.NoPerms", "&cYou don't have Permission!");
@@ -108,7 +106,7 @@ public class Configuration {
         cfg.addDefault("ChatFormat.Use", Boolean.TRUE);
         cfg.addDefault("ChatFormat.Format", "&a%PLAYER&7 | &fMESSAGE%");
 
-        Bukkit.getConsoleSender().sendMessage(String.valueOf(cfg.getString("Messages.Prefix").replaceAll("&", "§")) + "config.yml was configured successfully.");
+        Bukkit.getConsoleSender().sendMessage(String.valueOf(cfg.getString("Messages.Prefix").replaceAll("&", "§")) + "MCConfig.yml was configured successfully.");
         saveCFG();
         if (!file.exists())
             try {
@@ -120,7 +118,6 @@ public class Configuration {
 
     // Saves everything written in the Config into the HashMaps in the FreshTicket Main Class.
     public static void setCache() {
-        FreshTicket.stringsettings.put("WebhookURL", cfg.getString("Discord.WebhookURL"));
 
         FreshTicket.messages.put("Prefix", cfg.getString("Messages.Prefix").replace("&", "§"));
         FreshTicket.messages.put("NoPerms", cfg.getString("Messages.NoPerms").replace("&", "§"));
@@ -192,6 +189,6 @@ public class Configuration {
         FreshTicket.scoreboardanimated.put("SBAClass3", cfg.getString("Scoreboard.Animated.Class3").replace("&", "§"));
         FreshTicket.scoreboardanimated.put("SBAClass3Color", cfg.getString("Scoreboard.Animated.Class3Color").replace("&", "§"));
 
-        Bukkit.getConsoleSender().sendMessage((FreshTicket.messages.get("Prefix")) + "Config.yml wurde geladen.");
+        Bukkit.getConsoleSender().sendMessage((FreshTicket.messages.get("Prefix")) + "MCConfig.yml was successfully loaded!");
     }
 }

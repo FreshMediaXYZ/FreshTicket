@@ -2,10 +2,10 @@ package at.cracki.freshticket.main;
 
 import at.cracki.freshticket.commands.SupportCMD;
 import at.cracki.freshticket.commands.SupportLoginCMD;
-import at.cracki.freshticket.files.Configuration;
+import at.cracki.freshticket.files.DCConfiguration;
+import at.cracki.freshticket.files.MCConfiguration;
 import at.cracki.freshticket.listener.MenuListener;
 import at.cracki.freshticket.listener.PlayerJoinQuitHandler;
-import at.cracki.freshticket.utils.DiscordAdvertisement;
 import at.cracki.freshticket.utils.PlayerMenuUtility;
 import org.bukkit.Bukkit;
 import org.bukkit.command.ConsoleCommandSender;
@@ -34,6 +34,8 @@ public class FreshTicket extends JavaPlugin {
     // Saves String like the Discord WebhookURL or the Chat Format.
     public static HashMap<String, String> stringsettings = new HashMap<>();
 
+    public static HashMap<String, String> dcsettings = new HashMap<>();
+
     // Saves (Join) Titles.
     public static HashMap<String, String> titles = new HashMap<>();
 
@@ -55,14 +57,19 @@ public class FreshTicket extends JavaPlugin {
     // PlayerMenuUtility used for Menu Creation.
     private static final HashMap<Player, PlayerMenuUtility> playerMenuUtilityMap = new HashMap<>();
 
+    // Saves integer values.
+    public static HashMap<String, Integer> integer = new HashMap<>();
+
     // ArrayList to save currently logged-in Staff Members.
     public static ArrayList<Player> loggedInMembers = new ArrayList<>();
 
     @Override
     public void onEnable() {
         instance = this;
-        Configuration.cfgConfig();
-        Configuration.setCache();
+        MCConfiguration.cfgConfig();
+        MCConfiguration.setCache();
+        DCConfiguration.cfgConfig();
+        DCConfiguration.setCache();
         init();
 
         // Method which announces the Start of the Plugin using a Discord Webhook.

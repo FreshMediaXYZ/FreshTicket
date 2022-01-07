@@ -51,23 +51,28 @@ public class SupportGUI extends Menu {
             im.addEnchant(Enchantment.DURABILITY, 1, true);
             im.addItemFlags(ItemFlag.HIDE_ENCHANTS);
             i.setItemMeta(im);
-/*            String webhookURL = FreshTicket.stringsettings.get("WebhookURL");
+            String webhookURL = FreshTicket.dcsettings.get("WebhookURL");
             DiscordWebhook webhook = new WebhookManager(new DiscordWebhook(webhookURL))
                     .setEmbed()
-                    .setDescription("A Ticket has been created!")
-                    .setTitle("Ticket System Notification")
-                    .addField("Case", "Case1", true)
-                    .addField("Priority", "Case2", true)
-                    .setImage("https://i.imgur.com/1MxIktF.png")
-                    .setAuthor("FreshTicket", "", "")
-                    .setColor(252, 32, 3)
-                    .setThumbnail("https://i.imgur.com/lSGOy57.png")
+                    .setDescription(FreshTicket.stringsettings.get("EmbedTicketDesc"))
+                    .setTitle(FreshTicket.stringsettings.get("EmbedTicketTitle"))
+                    .addField("Case", FreshTicket.dcsettings.get("SupportCase1Name"), true)
+                    .addField("Priority", FreshTicket.dcsettings.get("SupportCase1Level"), true)
+                    .setImage(FreshTicket.stringsettings.get("EmbedTicketImageURL"))
+                    .setAuthor(FreshTicket.stringsettings.get("EmbedTicketAuthorName"),
+                            FreshTicket.stringsettings.get("EmbedTicketAuthorURL"),
+                            FreshTicket.stringsettings.get("EmbedTicketAuthorICONURL"))
+                    .setColor(FreshTicket.integer.get("EmbedTicketColor1"),
+                            FreshTicket.integer.get("EmbedTicketColor2"),
+                            FreshTicket.integer.get("EmbedTicketColor3"))
+                    .setThumbnail(FreshTicket.stringsettings.get("EmbedTicketThumbnailURL"))
                     .setFooter("Developed by CalledCracki & JamesLikesIDE (@FreshMedia)",
                                 "https://i.imgur.com/lSGOy57.png").execute().toWebhook();
-            webhook.setContent("@Cracki **" + player.getName() + "** has created a Ticket!");
-            webhook.setAvatarUrl("https://i.imgur.com/4GP7kZ2.png");
+            webhook.setContent(FreshTicket.stringsettings.get("EmbedTicketContent")
+                    .replace("%player%", player.getName()));
+            webhook.setAvatarUrl(FreshTicket.stringsettings.get("EmbedTicketAvatarURL"));
             webhook.setUsername("FreshTicket System");
-            */
+
         }
     }
 
