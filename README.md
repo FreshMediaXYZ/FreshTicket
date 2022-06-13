@@ -100,6 +100,7 @@ Here you will learn the most important steps how to use the FreshTicket system o
 It is recommended to make the following changes even before the installation.
 
 <h3>Discord Webhook Creation</h3>
+
 _Create a Discord Webhook before Installation._
 
 Small Guide on how to create a webhook:
@@ -113,6 +114,7 @@ Small Guide on how to create a webhook:
 **WARNING:** Do not share your webhook URL with third parties under any circumstances!
 
 <h3>Discord Configuration Settings</h3>
+
 _Change the Discord Configuration as you like_
 
 In the Discord Configuration you can change any discord
@@ -123,9 +125,10 @@ the images as a Patreon._
 On top of the DCConfig.yml you can paste in the
 webhook URL.
 
-**Do not change any %parameters.**
+**Do not change any %parameters% .**
 
 <h3>Minecraft Configuration Settings</h3>
+
 _Change the Discord Configuration as you like_
 
 In the Minecraft Configuration you can change any minecraft
@@ -133,7 +136,7 @@ related setting as you'd like to.
 In here you change anything there is to
 change without having to be a patreon.
 
-**Do not change any %parameters.**
+**Do not change any %parameters% .**
 
 ### Installation
 
