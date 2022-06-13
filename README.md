@@ -22,7 +22,7 @@ Private GitHub Repo of FreshTicket
 <br />
 <div align="center">
   <a href="[https://github.com/CalledCracki/GGFeatures_REL]">
-    <img src="https://i.imgur.com/ki30YlT.png" alt="Logo" width="80" height="80">
+    <img src="https://i.imgur.com/ki30YlT.png" alt="Logo" width="100" height="100">
   </a>
 
   <h1 align="center">Fresh Ticket</h1>
@@ -70,7 +70,9 @@ Private GitHub Repo of FreshTicket
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+  <a href="[https://github.com/CalledCracki/GGFeatures_REL]">
+    <img src="https://i.imgur.com/ki30YlT.png" alt="Logo" width="160" height="160">
+  </a>
 
 FreshTicket is one of the many systems launched by the FreshMedia team. We want to offer our players the possibility to get support in an uncomplicated and fast way and to offer our customers an insight into the work of the FreshMedia team.
 
