@@ -1,8 +1,6 @@
 # FreshTicket
 Private GitHub Repo of FreshTicket
 
-# GGFeatures_REL
-
 <div id="top"></div>
 
 <!-- PROJECT SHIELDS -->
